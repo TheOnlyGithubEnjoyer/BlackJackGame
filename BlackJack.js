@@ -1,10 +1,11 @@
-let textArea = document.getElementById("text-info");
+let textArea = document.getElementById("text-area");
 let newGameButton = document.getElementById("start-game-button");
 let hitButton = document.getElementById("hit-button");              // Id's of buttons for functions
 let standButton = document.getElementById("stand-button");
 
 let suits = ["Hearts", "Clubs", "Diamonds", "Spades"];
-let values = [
+let values = 
+[
   "Ace",
   "King",
   "Queen",
@@ -54,15 +55,16 @@ newGameButton.addEventListener("click", function()
 });
 
 standButton.addEventListener("click", function() {
-    gameOver = true;                              // Function of the stand button
+    gameOver = true;                             
+    checkForEndOfGame();                // Function of the stand button
     showStatus();
-    checkForEndOfGame();
   });
 
 hitButton.addEventListener("click", function() {
-    playerCards.push(getNextCard());               // Hit button function
+    playerCards.push(getNextCard()); 
+    checkForEndOfGame();                   // Hit button function
     showStatus();
-    checkForEndOfGame();
+
 });
 
 
@@ -82,7 +84,6 @@ function createDeck() {
 
   function showStatus() {
     if (!gamesStarted) {
-      textArea.innerText = "Welcome to The Game Of BlackJack";
       return;
     }
   
@@ -101,22 +102,23 @@ function createDeck() {
     textArea.innerText =
     "Dealers Hand: \n " +
     dealerCardString + 
-    "(Score :" +
+    "(Score: " +
     dealerScore +
-    ")\n\n" +
+    " )\n\n" +
     "Players Hand: \n" +
     playerCardString +
     "(Score: " +
     playerScore +
-    ")\n\n";
+    " )\n\n";
 
   if (gameOver) {
-    if (playerWon) {
+    if (playerWon) 
+    {
       textArea.innerText += "You Win!";
     }
     if (playerLost) 
     {
-      textArea.innerText += "Dealer Wins!"
+      textArea.innerText += "Dealer Wins!";
     }
     if (playerTie)
     {
@@ -196,11 +198,8 @@ function updateScores() {
   function checkForEndOfGame() {
     updateScores();
     if (gameOver) {
-      //let the dealer take cards
-      while (
-        playerScore <= 21 &&
-        dealerScore <= 21 
-      ) {
+      while (playerScore <= 21 && dealerScore <= 21 && dealerScore < 17) 
+      {
         dealerCards.push(getNextCard());
         updateScores();
       }
