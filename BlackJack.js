@@ -36,7 +36,7 @@ newGameButton.addEventListener("click", function() {
 
     deck = createDeck();
     shuffleDeck(deck);
-    dealerCards = [getNextCard(), getNextCard()];
+    dealerCards = [getNextCard(), getNextCard()];       // Start Game button function
     playerCards = [getNextCard(), getNextCard()];
   
     newGameButton.style.display = "none";
@@ -45,3 +45,18 @@ newGameButton.addEventListener("click", function() {
     showStatus();
 
 });
+
+standButton.addEventListener("click", function() {
+    gameOver = true;                              // Function of the stand button
+    showStatus(); // Add checkForEndOfGame
+  });
+
+hitButton.addEventListener("click", function() {
+    playerCards.push(getNextCard());               // Hit button function
+    showStatus(); // Add checkForEndOfGame
+});
+
+
+
+
+
