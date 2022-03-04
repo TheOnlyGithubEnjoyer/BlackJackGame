@@ -29,6 +29,19 @@ let dealerScore = 0;
 let playerScore = 0;
 let deck = [];
 
+newGameButton.addEventListener("click", function() {
+    gamesStarted = true;
+    gameOver = false;
+    playerWon = false;
 
+    deck = createDeck();
+    shuffleDeck(deck);
+    dealerCards = [getNextCard(), getNextCard()];
+    playerCards = [getNextCard(), getNextCard()];
+  
+    newGameButton.style.display = "none";
+    hitButton.style.display = "inline";
+    standButton.style.display = "inline";
+    showStatus();
 
-
+});
