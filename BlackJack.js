@@ -23,16 +23,24 @@ let values = [
 let gamesStarted = false;
 let gameOver = false;
 let playerWon = false;
+let playerTie = false;
+let playerLost = false;
 let dealerCards = [];               // All of the game variables
 let playerCards = [];
 let dealerScore = 0;
 let playerScore = 0;
 let deck = [];
 
-newGameButton.addEventListener("click", function() {
+hitButton.style.display = "none";
+standButton.style.display = "none";
+
+newGameButton.addEventListener("click", function() 
+{
     gamesStarted = true;
     gameOver = false;
     playerWon = false;
+    playerTie = false;
+    playerLost = false;
 
     deck = createDeck();
     shuffleDeck(deck);
@@ -40,10 +48,9 @@ newGameButton.addEventListener("click", function() {
     playerCards = [getNextCard(), getNextCard()];
   
     newGameButton.style.display = "none";
-    hitButton.style.display = "inline";
+    hitButton.style.display = "inline";        // Hit and Stand button stay and the Start button disappears
     standButton.style.display = "inline";
     showStatus();
-
 });
 
 standButton.addEventListener("click", function() {
@@ -81,23 +88,39 @@ function createDeck() {
   
     let dealerCardString = "";
     for (let i = 0; i < dealerCards.length; i++) {
-        dealerCardString += getCardString(dealercards[i]);
+        dealerCardString += getCardString(dealerCards[i]) + "\n";
     }
   
     let playerCardString = "";
     for (let i = 0; i < playerCards.length; i++) {
-        playerCardString += getCardString(playerCards[i]);
+        playerCardString += getCardString(playerCards[i]) + "\n";
     }
 
     updateScores();
     
+    textArea.innerText =
+    "Dealers Hand: \n " +
+    dealerCardString + 
+    "(Score :" +
+    dealerScore +
+    ")\n\n" +
+    "Players Hand: \n" +
+    playerCardString +
+    "(Score: " +
+    playerScore +
+    ")\n\n";
+
   if (gameOver) {
     if (playerWon) {
       textArea.innerText += "You Win!";
     }
-    else
+    if (playerLost) 
     {
-      textArea.innerText += "You Lose"
+      textArea.innerText += "Dealer Wins!"
+    }
+    if (playerTie)
+    {
+        textArea.innerText += "It is a Tie";
     }
 
     newGameButton.style.display = "inline";
@@ -186,10 +209,12 @@ function updateScores() {
     
   if (playerScore > 21 && dealerScore <= 21) {
     playerWon = false;
+    playerLost = true;
     gameOver = true;
   } 
   else if (dealerScore > 21) {
     playerWon = true;
+    playerLost = false;
     gameOver = true;
   }
     else if (gameOver) {
@@ -198,7 +223,12 @@ function updateScores() {
     }
     if (playerScore < dealerScore)
     {
-        playerWon = false;              // You lose if you have less score than dealer
+        playerLost = true;              // You lose if you have less score than dealer
+    }
+    if (playerScore == dealerScore) 
+    {
+        playerTie = true;
+        playerLost = false;            // If scores are equal then it becomes a tie
     }
 }
 }
