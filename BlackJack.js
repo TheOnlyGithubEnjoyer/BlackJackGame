@@ -48,15 +48,44 @@ newGameButton.addEventListener("click", function() {
 
 standButton.addEventListener("click", function() {
     gameOver = true;                              // Function of the stand button
-    showStatus(); // Add checkForEndOfGame
+    showStatus();
+    checkForEndOfGame();
   });
 
 hitButton.addEventListener("click", function() {
     playerCards.push(getNextCard());               // Hit button function
-    showStatus(); // Add checkForEndOfGame
+    showStatus();
+    checkForEndOfGame();
 });
 
 
+function createDeck() {
+    let deck = [];
+    for (let suitIdx = 0; suitIdx < suits.length; suitIdx++) {
+      for (let valueIdx = 0; valueIdx < values.length; valueIdx++) {
+        let card = {
+          suit: suits[suitIdx],
+          value: values[valueIdx]
+        };
+        deck.push(card);
+      }
+    }
+    return deck;
+  }
+
+  function showStatus() {
+    if (!gamesStarted) {
+      textArea.innerText = "Welcome to The Game Of BlackJack";
+      return;
+    }
+  
+    let dealerCardString = "";
+    for (let i = 0; i < dealerCards.length; i++) {
+    }
+  
+    let playerCardString = "";
+    for (let i = 0; i < playerCards.length; i++) {
+    }
 
 
-
+  }
