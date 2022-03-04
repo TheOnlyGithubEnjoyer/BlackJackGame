@@ -81,11 +81,28 @@ function createDeck() {
   
     let dealerCardString = "";
     for (let i = 0; i < dealerCards.length; i++) {
+        dealerCardString += getCardString(dealercards[i]);
     }
   
     let playerCardString = "";
     for (let i = 0; i < playerCards.length; i++) {
+        playerCardString += getCardString(playerCards[i]);
     }
 
+    updateScores();
+    
+  if (gameOver) {
+    if (playerWon) {
+      textArea.innerText += "You Win!";
+    }
+    else
+    {
+      textArea.innerText += "You Lose"
+    }
 
+    newGameButton.style.display = "inline";
+    hitButton.style.display = "none";
+    standButton.style.display = "none";
   }
+}
+
