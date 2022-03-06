@@ -122,7 +122,7 @@ function createDeck() {
     }
     if (playerTie)
     {
-        textArea.innerText += "It is a Tie";
+        textArea.innerText += "It is a Tie!";
     }
 
     newGameButton.style.display = "inline";
