@@ -74,18 +74,18 @@ nav {
 .button2 {
     background-color: lightgreen;
     text-decoration: none;
-    border: 2.5px solid darkgreen;
+    border: 10px inset darkgreen;
     font-size: 16px;
-    padding: 2px 8px;
+    padding: 6px 10px;
     margin: auto;
 }
 
 .button3 {
     background-color: red;
     text-decoration: none;
-    border: 2.5px solid darkred;
+    border: 10px inset darkred;
     font-size: 16px;
-    padding: 2px 8px;
+    padding: 6px 6px;
     margin: auto;
 }
 
@@ -99,7 +99,15 @@ nav {
     display: flex;
     justify-content: space-evenly;
     color: rgb(163, 255, 183);
+    padding: 20px;
+}
+
+.visual p{
     font-size: 18px;
+    padding: 25px;
+    display: inline-table;
+    border: 3px dotted Black;
+    margin: 10px;
 }
 
 .visual img {
