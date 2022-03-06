@@ -88,6 +88,8 @@ nav {
 }
 
 .wrapper p {
+    font-size: 17px;
+    padding: 2%;
     text-align: center;
 }
 
