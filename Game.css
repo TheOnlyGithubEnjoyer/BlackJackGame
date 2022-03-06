@@ -4,11 +4,19 @@
 
 }
 
+body {
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgb(91, 91, 99, 0.7), rgb(27, 202, 4, 0.7)), url("./Black-Jack-1.jpg");
+    background-position: center;
+    background-size: cover;
+}  
+
 .header {
     width: 100%;
     background-position: center;
     background-size: cover;
-    color: Black;
+    color: rgb(255, 255, 255);
 }
 
 .header h1 {
@@ -34,8 +42,8 @@ nav {
 }
 
 .nav-links ul li a {
-    color: Black;
-    font-size: 19px;
+    color: rgb(255, 255, 255);
+    font-size: 22px;
     text-decoration: none;
 }
 
@@ -43,7 +51,7 @@ nav {
 .nav-links ul li::after {
     content: '';
     width: 0%;
-    background: rgb(253, 0, 0);
+    background: rgb(78, 252, 101);
     display: block;
     margin: auto;
     height: 2px;
@@ -83,13 +91,23 @@ nav {
 
 .action-panel {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 
-.wrapper p {
-    font-size: 17px;
-    padding: 2%;
-    text-align: center;
+.visual {
+    display: flex;
+    justify-content: space-evenly;
+    color: rgb(163, 255, 183);
+    font-size: 18px;
 }
+
+.visual img {
+    width: 200px;
+    height: 200px;
+    margin-right: 80px;
+}
+
+
+
 
