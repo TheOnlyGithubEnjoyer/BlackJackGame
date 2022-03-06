@@ -69,7 +69,7 @@ nav {
     border: 2.5px solid darkgreen;
     font-size: 16px;
     padding: 2px 8px;
-    margin: 6px;
+    margin: auto;
 }
 
 .button3 {
@@ -81,4 +81,13 @@ nav {
     margin: auto;
 }
 
+.action-panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper p {
+    text-align: center;
+}
 
