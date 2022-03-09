@@ -4,11 +4,19 @@
 
 }
 
+body {
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgb(91, 91, 99, 0.7), rgb(27, 202, 4, 0.7)), url("./BlackjackHand.jpg");
+    background-position: center;
+    background-size: cover;
+}  
+
 .header {
     width: 100%;
     background-position: center;
     background-size: cover;
-    color: Black;
+    color: white;
 }
 
 .header h1 {
@@ -34,8 +42,8 @@ nav {
 }
 
 .nav-links ul li a {
-    color: Black;
-    font-size: 19px;
+    color: white;
+    font-size: 22px;
     text-decoration: none;
 }
 
@@ -43,7 +51,7 @@ nav {
 .nav-links ul li::after {
     content: '';
     width: 0%;
-    background: rgb(253, 0, 0);
+    background: rgb(114, 253, 0);
     display: block;
     margin: auto;
     height: 2px;
@@ -55,20 +63,24 @@ nav {
 }
 
 .wrapper h1 {
-    font-size: 26px;
-    padding: 10px;
+    font-size: 28px;
+    padding: 8px;
+    color: rgb(255, 255, 255);
 }
 
 .wrapper h2 {
-    font-size: 20px;
+    font-size: 23px;
     padding: 10px;
+    color: rgb(204, 255, 215);
 }
 
 .wrapper p {
-    font-size: 15px;
+    color: rgb(204, 255, 215);
+    font-size: 16px;
+    font-weight: bold;
     padding: 5px;
     display: inline-block;
-    border: 1.5px dashed Black;
+    border: 5px dashed rgb(89, 255, 83);
     margin: 5px;
     padding: 15px;
 }
@@ -76,4 +88,11 @@ nav {
 .wrapper {
     margin: 5px;
     padding: 15px;
+}
+
+.cards img {
+    padding: 15px;
+    width: 250px;
+    height: 180px;
+    margin-right: 120px;
 }

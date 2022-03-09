@@ -75,6 +75,7 @@ nav {
     background-color: lightgreen;
     text-decoration: none;
     border: 10px inset darkgreen;
+    font-weight: bold;
     font-size: 16px;
     padding: 6px 10px;
     margin: auto;
@@ -84,6 +85,7 @@ nav {
     background-color: red;
     text-decoration: none;
     border: 10px inset darkred;
+    font-weight: bold;
     font-size: 16px;
     padding: 6px 6px;
     margin: auto;
@@ -103,10 +105,11 @@ nav {
 }
 
 .visual p{
+    font-weight: bold;
     font-size: 18px;
     padding: 25px;
     display: inline-table;
-    border: 3px dotted Black;
+    border: 4px dotted rgb(99, 255, 164);
     margin: 10px;
 }
 
