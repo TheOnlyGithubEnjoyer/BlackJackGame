@@ -63,9 +63,9 @@ nav {
 }
 
 .button1 {
-    background-color: rgba(212, 250, 0, 0.712);
+    background-color: rgb(176, 210, 255);
     text-decoration: none;
-    border: 1.5px dashed rgb(155, 155, 96);
+    border: 3px inset rgb(150, 142, 255);
     font-size: 18px;
     padding: 6px 6px;
     margin: 10px;
@@ -97,6 +97,28 @@ nav {
     justify-content: center;
 }
 
+
+
+.bet input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    background-color: rgb(0, 255, 115);
+    color: rgb(110, 110, 110);
+    border-radius: 10px;
+}
+
+.bet label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin: 6px;
+    color: rgb(176, 255, 187);
+    font-size: 19px;
+}
+
 .visual {
     display: flex;
     justify-content: space-evenly;
@@ -109,13 +131,13 @@ nav {
     font-size: 18px;
     padding: 25px;
     display: inline-table;
-    border: 4px dotted rgb(99, 255, 164);
+    border: 4px ridge rgb(0, 255, 106);
     margin: 10px;
 }
 
 .visual img {
-    width: 200px;
-    height: 200px;
+    width: 219px;
+    height: 210px;
     margin-right: 80px;
 }
 
