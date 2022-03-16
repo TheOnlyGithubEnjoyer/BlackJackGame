@@ -2,6 +2,7 @@ let textArea = document.getElementById("text-area");
 let newGameButton = document.getElementById("start-game-button");
 let hitButton = document.getElementById("hit-button");              // Id's of buttons for functions
 let standButton = document.getElementById("stand-button");
+let dollarValue = document.getElementById("dollars");
 
 let suits = ["Hearts", "Clubs", "Diamonds", "Spades"];
 let values = 
@@ -30,10 +31,21 @@ let dealerCards = [];               // All of the game variables
 let playerCards = [];
 let dealerScore = 0;
 let playerScore = 0;
+let mydollars = 100;
 let deck = [];
 
 hitButton.style.display = "none";
 standButton.style.display = "none";
+
+document.getElementById('mybet').onchange = function() {   //event listener
+	if (this.value < 0) {
+		this.value = 0;
+	}                               //limiting minimum and maximum values for the bet
+	if (this.value > mydollars) {
+		this.value = mydollars;
+	}
+	textArea.innerText = 'Bet changed to $' + this.value;
+};
 
 newGameButton.addEventListener("click", function() 
 {
@@ -42,6 +54,7 @@ newGameButton.addEventListener("click", function()
     playerWon = false;
     playerTie = false;
     playerLost = false;
+    dollarValue.innerText = mydollars;
 
     deck = createDeck();
     shuffleDeck(deck);
@@ -111,24 +124,41 @@ function createDeck() {
     playerScore +
     " )\n\n";
 
+    
   if (gameOver) {
     if (playerWon) 
     {
       textArea.innerText += "You Win!";
+      let betvalue = document.getElementById('mybet').value;
+      mydollars = mydollars + betvalue;
+      document.getElementById('dollars').innerText = mydollars;   
     }
     if (playerLost) 
     {
       textArea.innerText += "Dealer Wins!";
+      let betvalue = document.getElementById('mybet').value;
+      mydollars = mydollars - betvalue;
+      document.getElementById('dollars').innerText = mydollars;   
+
     }
     if (playerTie)
     {
         textArea.innerText += "It is a Tie!";
+        let betvalue = document.getElementById('mybet').value;
+        mydollars = mydollars;
+        document.getElementById('dollars').innerText = mydollars;   
     }
 
     newGameButton.style.display = "inline";
     hitButton.style.display = "none";
     standButton.style.display = "none";
+
+    // let betvalue = document.getElementById('mybet').value;
+    // mydollars = mydollars - betvalue;
+    // document.getElementById('dollars').innerHTML = mydollars;   
+    // document.getElementById('mybet').disabled = true;
   }
+
 }
 
 function shuffleDeck(deck) {
@@ -193,6 +223,7 @@ function getCardNumericValue(card) {
 function updateScores() {
     dealerScore = getScore(dealerCards);
     playerScore = getScore(playerCards);
+    
   }
   
   function checkForEndOfGame() {
