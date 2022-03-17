@@ -1,6 +1,6 @@
 let textArea = document.getElementById("text-area");
 let newGameButton = document.getElementById("start-game-button");
-let hitButton = document.getElementById("hit-button");              // Id's of buttons for functions
+let hitButton = document.getElementById("hit-button");              // Id's for functions
 let standButton = document.getElementById("stand-button");
 let dollarValue = document.getElementById("dollars");
 
@@ -37,7 +37,7 @@ let deck = [];
 hitButton.style.display = "none";
 standButton.style.display = "none";
 
-document.getElementById('mybet').onchange = function() {   //event listener
+document.getElementById('mybet').onchange = function() {   
 	if (this.value < 0) {
 		this.value = 0;
 	}                               //limiting minimum and maximum values for the bet
@@ -131,32 +131,27 @@ function createDeck() {
       textArea.innerText += "You Win!";
       let betvalue = document.getElementById('mybet').value;
       mydollars = mydollars + betvalue;
-      document.getElementById('dollars').innerText = mydollars;   
+      document.getElementById('dollars').innerHTML = mydollars;     // if the player wins you gain the money of the bet 
     }
     if (playerLost) 
     {
       textArea.innerText += "Dealer Wins!";
-      let betvalue = document.getElementById('mybet').value;
+      let betvalue = document.getElementById('mybet').value;  // if the dealer wins you lose the money of the bet
       mydollars = mydollars - betvalue;
-      document.getElementById('dollars').innerText = mydollars;   
+      document.getElementById('dollars').innerHTML = mydollars;   
 
     }
     if (playerTie)
     {
         textArea.innerText += "It is a Tie!";
         let betvalue = document.getElementById('mybet').value;
-        mydollars = mydollars;
-        document.getElementById('dollars').innerText = mydollars;   
+        mydollars = mydollars;                                  // if it's a tie the bet won't effect the money
+        document.getElementById('dollars').innerHTML = mydollars;   
     }
 
     newGameButton.style.display = "inline";
-    hitButton.style.display = "none";
+    hitButton.style.display = "none";       // hit and stand button disappears when the round is over
     standButton.style.display = "none";
-
-    // let betvalue = document.getElementById('mybet').value;
-    // mydollars = mydollars - betvalue;
-    // document.getElementById('dollars').innerHTML = mydollars;   
-    // document.getElementById('mybet').disabled = true;
   }
 
 }

@@ -96,7 +96,7 @@ nav {
     height: 190px;
     padding: 15px;
     margin-right: 120px;
-    border-radius: 35%;
+    border-end-end-radius: 100%;
 }
 
 .cards img:hover {

@@ -97,8 +97,6 @@ nav {
     justify-content: center;
 }
 
-
-
 .bet input {
     display: flex;
     justify-content: center;
@@ -144,6 +142,40 @@ nav {
     margin-right: 80px;
 }
 
+.total {
+    display: flex;
+    align-items: center;
+    justify-content: center;      /*  Total $ */
+    margin: 5px;
+    color: rgb(236, 236, 236);
+}
+
+
+.money span {
+    display: flex;
+    align-items: center;        /* 100 */
+    justify-content: center;
+    color: rgb(236, 236, 236);
+
+}
+
+.bet {
+    display: flex; 
+    align-items: center;
+    justify-content: center;        /* Bet Amount */
+    color: rgb(236, 236, 236);
+}
+
+.input {
+    display: flex; 
+    align-items: center;            
+    justify-content: center;
+}
+
+.input input {
+    background-color: rgb(21, 255, 21);
+    border: 2px inherit rgb(66, 66, 66);
+}
 
 
 
